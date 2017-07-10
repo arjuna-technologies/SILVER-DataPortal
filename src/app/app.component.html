@@ -1,0 +1,18 @@
+<md-toolbar color="primary">
+    <span> SILVER Data Portal </span>
+    <span class="toolbar-spacer"></span>
+    <button md-button (click)="startDataLoad()">
+        <md-icon>cloud_download</md-icon>
+        <span>Data Download</span>
+    </button>
+    <button md-button (click)="openLoginDialog()">
+        <md-icon>person</md-icon>
+        <span>{{username}}</span>
+    </button>
+</md-toolbar>
+
+<md-card>
+    <md-card-content>
+        <div #table></div>
+    </md-card-content>
+</md-card>
