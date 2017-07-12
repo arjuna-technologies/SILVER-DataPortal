@@ -48,8 +48,13 @@ export class AppComponent implements AfterViewInit
 
     public openLoginDialog(): void
     {
-        let loginDialogRef = this.dialog.open(LoginDialogComponent);
-        loginDialogRef.afterClosed().subscribe(result => this.username = result);
+        if (this.username === '')
+        {
+            let loginDialogRef = this.dialog.open(LoginDialogComponent);
+            loginDialogRef.afterClosed().subscribe(result => this.username = result);
+        }
+        else
+            this.username = '';
     }
 
     private setupTable(): void
