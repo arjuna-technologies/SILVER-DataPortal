@@ -42,7 +42,21 @@ export class AppComponent implements AfterViewInit
 
     public dataLoadHandler(obj: any): void
     {
-        this.data = new google.visualization.DataTable(obj);
+        this.data = new google.visualization.DataTable();
+        if (obj.length > 0)
+        {
+            for (const key in obj[0])
+                this.data.addColumn('string', key);
+
+            for (const rowObj of obj)
+            {
+                let row = [];
+                for (const key in obj[0])
+                    row.push(rowObj[key]);
+
+                this.data.addRow(row);
+            }
+        }
         this.drawTable();
     }
 

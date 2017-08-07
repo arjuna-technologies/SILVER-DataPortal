@@ -6,7 +6,8 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class LoaderService
 {
-    private loadBaseURL = 'assets/arrest.json';
+//    private loadBaseURL = 'assets/arrest.json';
+    private loadBaseURL = 'http://localhost:8080/consentengine/ws/datasource/data?sessionid=Stuart&datasourceid=0001';
 
     constructor(private http: Http)
     {
@@ -31,6 +32,6 @@ export class LoaderService
     {
         console.log('Error while loading Details: ' + (error.message || error));
 
-        return {};
+        return [];
     }
 }
