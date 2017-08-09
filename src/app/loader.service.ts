@@ -3,19 +3,18 @@ import { Injectable } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
+import { DatasourcesConfigService } from './config/datasources-config.service';
+
 @Injectable()
 export class LoaderService
 {
-//    private loadBaseURL = 'assets/arrest.json';
-    private loadBaseURL = 'http://localhost:8080/consentengine/ws/datasource/data?sessionid=Stuart&datasourceid=0001';
-
     constructor(private http: Http)
     {
     }
 
     public getData(): Promise<any>
     {
-        return this.http.get(this.loadBaseURL)
+        return this.http.get(this.this.getDataLoaderBaseURL)
                    .toPromise()
                    .then((response) => Promise.resolve(this.getDataSuccessHandler(response)))
                    .catch((response) => Promise.resolve(this.getDataErrorHandler(response)));

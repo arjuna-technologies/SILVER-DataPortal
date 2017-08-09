@@ -50,7 +50,7 @@ export class AppComponent implements AfterViewInit
 
             for (const rowObj of obj)
             {
-                let row = [];
+                const row = [];
                 for (const key in obj[0])
                     row.push(rowObj[key]);
 
@@ -64,7 +64,7 @@ export class AppComponent implements AfterViewInit
     {
         if (this.username === '')
         {
-            let loginDialogRef = this.dialog.open(LoginDialogComponent);
+            const loginDialogRef = this.dialog.open(LoginDialogComponent);
             loginDialogRef.afterClosed().subscribe(result => this.username = result);
         }
         else
