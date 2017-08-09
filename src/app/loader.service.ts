@@ -8,13 +8,13 @@ import { DatasourcesConfigService } from './config/datasources-config.service';
 @Injectable()
 export class LoaderService
 {
-    constructor(private http: Http)
+    constructor(private http: Http, private datasourcesConfigService: DatasourcesConfigService)
     {
     }
 
     public getData(): Promise<any>
     {
-        return this.http.get(this.this.getDataLoaderBaseURL)
+        return this.http.get(this.datasourcesConfigService.getDataLoaderBaseURL)
                    .toPromise()
                    .then((response) => Promise.resolve(this.getDataSuccessHandler(response)))
                    .catch((response) => Promise.resolve(this.getDataErrorHandler(response)));

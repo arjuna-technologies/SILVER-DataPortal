@@ -16,6 +16,7 @@ import { MdDialogModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
+import { DatasourcesConfigService } from './config/datasources-config.service';
 import { LoaderService } from './loader.service';
 
 @NgModule
@@ -45,6 +46,7 @@ import { LoaderService } from './loader.service';
     ],
     providers:
     [
+        DatasourcesConfigService,
         LoaderService
     ],
     bootstrap:

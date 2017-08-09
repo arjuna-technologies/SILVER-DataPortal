@@ -7,8 +7,8 @@ export class DatasourcesConfigService
 {
     private dataServiceHostPort: string;
 
-    public listDataDefLoaderBaseURL: string;
-    public getDataDefLoaderBaseURL: string;
+    public listDataServiceDefLoaderBaseURL: string;
+    public getDataServiceDefLoaderBaseURL: string;
     public getDataLoaderBaseURL: string;
 
     constructor()
@@ -17,17 +17,17 @@ export class DatasourcesConfigService
         {
             this.dataServiceHostPort = '';
 
-            this.listDataSourceDefLoaderBaseURL = 'assets/datasources';
-            this.getDataSourceDefLoaderBaseURL  = 'assets/datasource';
-            this.getDataLoaderBaseURL           = 'assets/data?sessionid=Stuart&datasourceid=0001';
+            this.listDataServiceDefLoaderBaseURL = 'assets/dataservices';
+            this.getDataServiceDefLoaderBaseURL  = 'assets/dataservice';
+            this.getDataLoaderBaseURL            = 'assets/data?sessionid=Stuart&datasourceid=0001';
         }
         else
         {
             this.dataServiceHostPort = 'dataservice.silver.arjuna.com';
 
-            this.listDataSourceDefLoaderBaseURL = 'http://' + this.dataServiceHostPort + '/consentengine/ws/datasources';
-            this.getDataSourceDefLoaderBaseURL  = 'http://' + this.dataServiceHostPort + '/consentengine/ws/datasource';
-            this.getDataLoaderBaseURL           = 'http://' + this.dataServiceHostPort + '/consentengine/ws/data?sessionid=Stuart&datasourceid=0001';
+            this.listDataServiceDefLoaderBaseURL = 'http://' + this.dataServiceHostPort + '/consentengine/ws/dataservices';
+            this.getDataServiceDefLoaderBaseURL  = 'http://' + this.dataServiceHostPort + '/consentengine/ws/dataservice';
+            this.getDataLoaderBaseURL            = 'http://' + this.dataServiceHostPort + '/consentengine/ws/data?sessionid=Stuart&datasourceid=0001';
         }
     }
 }
