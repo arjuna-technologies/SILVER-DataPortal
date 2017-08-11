@@ -21,10 +21,23 @@ export class AppComponent implements AfterViewInit
     private options;
 
     public username: string;
+    public dataSource: string;
+    public dataSources: any[];
 
     constructor(public dialog: MdDialog, private loaderService: LoaderService)
     {
-        this.username = '';
+        this.username    = '';
+        this.dataSource  = '';
+        this.dataSources = [];
+        this.dataSources.push({ 'name': 'Arrests', 'value': '0000' });
+        this.dataSources.push({ 'name': 'Attendance', 'value': '0001' });
+        this.dataSources.push({ 'name': 'Domestic Abuse', 'value': '0002' });
+        this.dataSources.push({ 'name': 'Exclusion', 'value': '0003' });
+        this.dataSources.push({ 'name': 'DoWP Match', 'value': '0004' });
+        this.dataSources.push({ 'name': 'Missing and Absent Children', 'value': '0005' });
+        this.dataSources.push({ 'name': 'DoWP No Match', 'value': '0006' });
+        this.dataSources.push({ 'name': 'Pupil', 'value': '0007' });
+        this.dataSources.push({ 'name': 'School Term', 'value': '0008' });
     }
 
     public ngAfterViewInit(): void

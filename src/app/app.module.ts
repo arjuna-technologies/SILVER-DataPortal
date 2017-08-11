@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdToolbarModule } from '@angular/material';
 import { MdCardModule } from '@angular/material';
+import { MdSelectModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { MdButtonModule } from '@angular/material';
 import { MdIconModule } from '@angular/material';
@@ -35,6 +36,7 @@ import { LoaderService } from './loader.service';
         BrowserAnimationsModule,
         MdToolbarModule,
         MdCardModule,
+        MdSelectModule,
         MdInputModule,
         MdButtonModule,
         MdIconModule,
