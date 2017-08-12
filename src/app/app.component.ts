@@ -21,14 +21,16 @@ export class AppComponent implements AfterViewInit
     private options;
 
     public username: string;
-    public dataSource: string;
+    public dataSourceId: string;
+    public downloading: boolean;
     public dataSources: any[];
 
     constructor(public dialog: MdDialog, private loaderService: LoaderService)
     {
-        this.username    = '';
-        this.dataSource  = '';
-        this.dataSources = [];
+        this.username     = '';
+        this.dataSourceId = '';
+        this.downloading  = false;
+        this.dataSources  = [];
         this.dataSources.push({ 'name': 'Arrests', 'value': '0000' });
         this.dataSources.push({ 'name': 'Attendance', 'value': '0001' });
         this.dataSources.push({ 'name': 'Domestic Abuse', 'value': '0002' });
@@ -48,7 +50,8 @@ export class AppComponent implements AfterViewInit
 
     public startDataLoad(): void
     {
-         this.loaderService.getData()
+         this.downloading = true;
+         this.loaderService.getData(this.dataSourceId, this.username)
              .then((obj) => Promise.resolve(this.dataLoadHandler(obj)))
              .catch((obj) => console.log('Failed data load'));
     }
@@ -71,6 +74,7 @@ export class AppComponent implements AfterViewInit
             }
         }
         this.drawTable();
+        this.downloading = false;
     }
 
     public openLoginDialog(): void

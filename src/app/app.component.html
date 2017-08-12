@@ -1,20 +1,24 @@
 <md-toolbar color="primary">
     <span> SILVER Data Portal </span>
     <span class="toolbar-spacer"></span>
-    <md-select placeholder="Data Source" *ngIf="username" [(ngModel)]="dataSource">
-        <md-option *ngFor="let dataSource of dataSources" [value]="dataSource.value">{{dataSource.name}}</md-option>
-    </md-select>
-    <button md-button *ngIf="username" (click)="startDataLoad()">
-        <md-icon>cloud_download</md-icon>
-        <span>View Data</span>
-    </button>
     <button md-button (click)="openLoginDialog()">
         <md-icon>person</md-icon>
-        <span>{{username}}</span>
+        <span *ngIf="username">{{username}}</span>
+        <span *ngIf="! username">Login</span>
     </button>
 </md-toolbar>
 
 <md-card>
+    <md-card-title *ngIf="username">
+        <md-select placeholder="Data Source" [(ngModel)]="dataSourceId">
+            <md-option *ngFor="let dataSource of dataSources" [value]="dataSource.value">{{dataSource.name}}</md-option>
+        </md-select>
+        <button md-button *ngIf="dataSourceId" (click)="startDataLoad()">
+            <md-icon>cloud_download</md-icon>
+            <span>View Data</span>
+         </button>
+         <md-progress-bar *ngIf="downloading" mode="indeterminate"></md-progress-bar>
+    </md-card-title>
     <md-card-content>
         <div #table></div>
     </md-card-content>

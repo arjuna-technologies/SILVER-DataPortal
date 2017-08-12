@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import 'hammerjs';
 
@@ -13,6 +14,7 @@ import { MdInputModule } from '@angular/material';
 import { MdButtonModule } from '@angular/material';
 import { MdIconModule } from '@angular/material';
 import { MdDialogModule } from '@angular/material';
+import { MdProgressBarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
@@ -31,6 +33,7 @@ import { LoaderService } from './loader.service';
     [
         BrowserModule,
         HttpModule,
+        FormsModule,
 
         FlexLayoutModule,
         BrowserAnimationsModule,
@@ -40,7 +43,8 @@ import { LoaderService } from './loader.service';
         MdInputModule,
         MdButtonModule,
         MdIconModule,
-        MdDialogModule
+        MdDialogModule,
+        MdProgressBarModule
     ],
     entryComponents:
     [

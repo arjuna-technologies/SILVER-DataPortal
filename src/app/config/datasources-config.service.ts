@@ -19,7 +19,7 @@ export class DatasourcesConfigService
 
             this.listDataServiceDefLoaderBaseURL = 'assets/dataservices';
             this.getDataServiceDefLoaderBaseURL  = 'assets/dataservice';
-            this.getDataLoaderBaseURL            = 'assets/data?sessionid=Stuart&datasourceid=0001';
+            this.getDataLoaderBaseURL            = 'assets/data';
         }
         else
         {
@@ -27,7 +27,7 @@ export class DatasourcesConfigService
 
             this.listDataServiceDefLoaderBaseURL = 'http://' + this.dataServiceHostPort + '/consentengine/ws/dataservices';
             this.getDataServiceDefLoaderBaseURL  = 'http://' + this.dataServiceHostPort + '/consentengine/ws/dataservice';
-            this.getDataLoaderBaseURL            = 'http://' + this.dataServiceHostPort + '/consentengine/ws/datasources/data?sessionid=Stuart&datasourceid=0000';
+            this.getDataLoaderBaseURL            = 'http://' + this.dataServiceHostPort + '/consentengine/ws/datasources/data';
         }
     }
 }

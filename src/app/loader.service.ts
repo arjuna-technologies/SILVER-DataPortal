@@ -12,9 +12,9 @@ export class LoaderService
     {
     }
 
-    public getData(): Promise<any>
+    public getData(dataSourceId: string, username: string): Promise<any>
     {
-        return this.http.get(this.datasourcesConfigService.getDataLoaderBaseURL)
+        return this.http.get(this.datasourcesConfigService.getDataLoaderBaseURL + '?sessionid=' + username + '&datasourceid=' + dataSourceId)
                    .toPromise()
                    .then((response) => Promise.resolve(this.getDataSuccessHandler(response)))
                    .catch((response) => Promise.resolve(this.getDataErrorHandler(response)));
