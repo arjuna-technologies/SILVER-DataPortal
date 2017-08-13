@@ -53,7 +53,7 @@ export class AppComponent implements AfterViewInit
          this.downloading = true;
          this.loaderService.getData(this.dataSourceId, this.username)
              .then((obj) => Promise.resolve(this.dataLoadHandler(obj)))
-             .catch((obj) => console.log('Failed data load'));
+             .catch((obj) => { console.log('Failed data load'); this.downloading = false });
     }
 
     public dataLoadHandler(obj: any): void
