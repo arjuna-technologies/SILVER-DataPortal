@@ -1,5 +1,9 @@
 #/bin/sh
 
+npm update
+
+ng version
+
 ng build --dev
 
 if [ -d '../dataportal-website' ]; then
