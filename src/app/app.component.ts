@@ -21,6 +21,8 @@ export class AppComponent implements AfterViewInit
     private options;
 
     public username: string;
+    public purpose: string;
+    public orginisation: string;
     public dataSourceId: string;
     public downloading: boolean;
     public dataSources: any[];
@@ -28,6 +30,8 @@ export class AppComponent implements AfterViewInit
     constructor(public dialog: MdDialog, private loaderService: LoaderService)
     {
         this.username     = '';
+        this.purpose      = '';
+        this.orginisation = '';
         this.dataSourceId = '';
         this.downloading  = false;
         this.dataSources  = [];
@@ -51,7 +55,7 @@ export class AppComponent implements AfterViewInit
     public startDataLoad(): void
     {
          this.downloading = true;
-         this.loaderService.getData(this.dataSourceId, this.username)
+         this.loaderService.getData(this.dataSourceId, this.username, this.orginisation, this.purpose)
              .then((obj) => Promise.resolve(this.dataLoadHandler(obj)))
              .catch((obj) => { console.log('Failed data load'); this.downloading = false });
     }
@@ -82,10 +86,22 @@ export class AppComponent implements AfterViewInit
         if (this.username === '')
         {
             const loginDialogRef = this.dialog.open(LoginDialogComponent);
-            loginDialogRef.afterClosed().subscribe(result => this.username = result);
+            loginDialogRef.afterClosed().subscribe(result => this.setupUser(result));
         }
         else
             this.username = '';
+    }
+
+    private setupUser(username: string): void
+    {
+        this.username     = username;
+        this.purpose      = 'Medical Research';
+//        this.purpose      = 'Process Improvement Research';
+        this.orginisation = 'North Tyneside Council';
+//        this.orginisation = 'Sunderland City Council';
+//        this.orginisation = 'South Tyneside Council';
+//        this.orginisation = 'Newcastle City Council';
+//        this.orginisation = 'Northumberland County Council';
     }
 
     private setupTable(): void
