@@ -1,12 +1,18 @@
 <md-toolbar color="primary">
     <span> SILVER Data Portal </span>
     <span class="toolbar-spacer"></span>
-    <span *ngIf="orginisation"><md-icon>account_balance</md-icon> {{orginisation}}</span>
-    <span *ngIf="purpose"><md-icon>map</md-icon> {{purpose}}</span>
     <button md-button (click)="openLoginDialog()">
         <md-icon>person</md-icon>
         <span *ngIf="username">{{username}}</span>
         <span *ngIf="! username">Login</span>
+    </button>
+    <button md-button *ngIf="orginisation">
+        <md-icon>account_balance</md-icon>
+        <span>{{orginisation}}</span>
+    </button>
+    <button md-button *ngIf="purpose">
+        <md-icon>map</md-icon>
+        <span>{{purpose}}</span>
     </button>
 </md-toolbar>
 

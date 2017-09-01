@@ -89,19 +89,51 @@ export class AppComponent implements AfterViewInit
             loginDialogRef.afterClosed().subscribe(result => this.setupUser(result));
         }
         else
-            this.username = '';
+        {
+            this.username     = '';
+            this.orginisation = '';
+            this.purpose      = '';
+
+            this.data = new google.visualization.DataTable();
+            this.drawTable();
+        }
     }
 
     private setupUser(username: string): void
     {
-        this.username     = username;
-        this.purpose      = 'Medical Research';
-//        this.purpose      = 'Process Improvement Research';
-        this.orginisation = 'North Tyneside Council';
-//        this.orginisation = 'Sunderland City Council';
-//        this.orginisation = 'South Tyneside Council';
-//        this.orginisation = 'Newcastle City Council';
-//        this.orginisation = 'Northumberland County Council';
+        this.username = username;
+
+        if (this.username === 'Alice')
+        {
+            this.orginisation = 'Newcastle City Council';
+            this.purpose      = 'Medical Research';
+        }
+        else if (this.username === 'Ben')
+        {
+            this.orginisation = 'North Tyneside Council';
+            this.purpose      = 'Process Improvement Research';
+        }
+        else if (this.username === 'Chloe')
+        {
+            this.orginisation = 'Sunderland City Council';
+            this.purpose      = 'Process Improvement Research';
+        }
+        else if (this.username === 'David')
+        {
+            this.orginisation = 'South Tyneside Council';
+            this.purpose      = 'Process Improvement Research';
+        }
+        else if (this.username === 'Emma')
+        {
+            this.orginisation = 'Northumberland County Council';
+            this.purpose      = 'Medical Research';
+        }
+        else
+        {
+            this.username     = '';
+            this.orginisation = '';
+            this.purpose      = '';
+        }
     }
 
     private setupTable(): void
