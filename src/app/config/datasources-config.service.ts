@@ -25,9 +25,9 @@ export class DatasourcesConfigService
         {
             this.dataServiceHostPort = 'dataservice.silver.arjuna.com';
 
-            this.listDataServiceDefLoaderBaseURL = 'http://' + this.dataServiceHostPort + '/consentengine/ws/dataservices';
-            this.getDataServiceDefLoaderBaseURL  = 'http://' + this.dataServiceHostPort + '/consentengine/ws/dataservice';
-            this.getDataLoaderBaseURL            = 'http://' + this.dataServiceHostPort + '/consentengine/ws/datasources/data';
+            this.listDataServiceDefLoaderBaseURL = 'https://' + this.dataServiceHostPort + '/consentengine/ws/dataservices';
+            this.getDataServiceDefLoaderBaseURL  = 'https://' + this.dataServiceHostPort + '/consentengine/ws/dataservice';
+            this.getDataLoaderBaseURL            = 'https://' + this.dataServiceHostPort + '/consentengine/ws/datasources/data';
         }
     }
 }
