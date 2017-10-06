@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import 'hammerjs';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdToolbarModule } from '@angular/material';
-import { MdCardModule } from '@angular/material';
-import { MdSelectModule } from '@angular/material';
-import { MdInputModule } from '@angular/material';
-import { MdButtonModule } from '@angular/material';
-import { MdIconModule } from '@angular/material';
-import { MdDialogModule } from '@angular/material';
-import { MdProgressBarModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
+import { MatCardModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material';
+import { MatProgressBarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
@@ -32,19 +32,19 @@ import { LoaderService } from './loader.service';
     imports:
     [
         BrowserModule,
+        BrowserAnimationsModule,
         HttpModule,
         FormsModule,
-
         FlexLayoutModule,
-        BrowserAnimationsModule,
-        MdToolbarModule,
-        MdCardModule,
-        MdSelectModule,
-        MdInputModule,
-        MdButtonModule,
-        MdIconModule,
-        MdDialogModule,
-        MdProgressBarModule
+
+        MatToolbarModule,
+        MatCardModule,
+        MatSelectModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        MatDialogModule,
+        MatProgressBarModule
     ],
     entryComponents:
     [

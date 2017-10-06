@@ -1,33 +1,36 @@
-<md-toolbar color="primary">
+<mat-toolbar color="primary">
     <span> SILVER Data Portal </span>
     <span class="toolbar-spacer"></span>
-    <button md-button (click)="openLoginDialog()">
-        <md-icon>person</md-icon>
+    <button mat-button (click)="openLoginDialog()">
+        <mat-icon>person</mat-icon>
         <span *ngIf="username">{{username}}</span>
         <span *ngIf="! username">Login</span>
     </button>
-    <button md-button *ngIf="orginisation">
-        <md-icon>account_balance</md-icon>
+    <button mat-button *ngIf="orginisation">
+        <mat-icon>account_balance</mat-icon>
         <span>{{orginisation}}</span>
     </button>
-    <button md-button *ngIf="purpose">
-        <md-icon>map</md-icon>
+    <button mat-button *ngIf="purpose">
+        <mat-icon>map</mat-icon>
         <span>{{purpose}}</span>
     </button>
-</md-toolbar>
+</mat-toolbar>
 
-<md-card>
-    <md-card-title *ngIf="username">
-        <md-select placeholder="Data Source" [(ngModel)]="dataSourceId">
-            <md-option *ngFor="let dataSource of dataSources" [value]="dataSource.value">{{dataSource.name}}</md-option>
-        </md-select>
-        <button md-button *ngIf="dataSourceId" [disabled]="downloading" (click)="startDataLoad()">
-            <md-icon>cloud_download</md-icon>
+<mat-card>
+    <mat-card-content *ngIf="username">
+        <mat-form-field>
+            <mat-select placeholder="Data Source" [(ngModel)]="dataSourceId">
+                <mat-option *ngFor="let dataSource of dataSources" [value]="dataSource.value">{{dataSource.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-button *ngIf="dataSourceId" [disabled]="downloading" (click)="startDataLoad()">
+            <mat-icon>cloud_download</mat-icon>
             <span>View Data</span>
          </button>
-         <md-progress-bar *ngIf="downloading" mode="indeterminate"></md-progress-bar>
-    </md-card-title>
-    <md-card-content>
+         <mat-progress-bar *ngIf="downloading" mode="indeterminate"></mat-progress-bar>
+    </mat-card-content>
+
+    <mat-card-content>
         <div #table></div>
-    </md-card-content>
-</md-card>
+    </mat-card-content>
+</mat-card>

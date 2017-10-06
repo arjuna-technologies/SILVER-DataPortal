@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { LoaderService } from './loader.service';
 
@@ -27,7 +27,7 @@ export class AppComponent implements AfterViewInit
     public downloading: boolean;
     public dataSources: any[];
 
-    constructor(public dialog: MdDialog, private loaderService: LoaderService)
+    constructor(public dialog: MatDialog, private loaderService: LoaderService)
     {
         this.username     = '';
         this.purpose      = '';
