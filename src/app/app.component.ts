@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { LoaderService } from './loader.service';
 
-declare var google:any;
+declare var google: any;
 
 @Component
 ({
