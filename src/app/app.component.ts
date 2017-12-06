@@ -44,6 +44,7 @@ export class AppComponent implements AfterViewInit
         this.dataSources.push({ 'name': 'DoWP No Match', 'value': '0006' });
         this.dataSources.push({ 'name': 'Pupil', 'value': '0007' });
         this.dataSources.push({ 'name': 'School Term', 'value': '0008' });
+        this.dataSources.push({ 'name': 'Research Subjects', 'value': '0009' });
     }
 
     public ngAfterViewInit(): void
