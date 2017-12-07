@@ -129,6 +129,21 @@ export class AppComponent implements AfterViewInit
             this.orginisation = 'Northumberland County Council';
             this.purpose      = 'Medical Research';
         }
+        else if (this.username === 'Fred')
+        {
+            this.orginisation = 'Newcastle University';
+            this.purpose      = 'Food Allergy';
+        }
+        else if (this.username === 'Gwen')
+        {
+            this.orginisation = 'Northumbria University';
+            this.purpose      = 'Diabetes';
+        }
+        else if (this.username === 'Harry')
+        {
+            this.orginisation = 'Sunderland University';
+            this.purpose      = 'Obesity';
+        }
         else
         {
             this.username     = '';
