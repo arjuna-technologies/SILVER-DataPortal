@@ -35,6 +35,8 @@ export class AppComponent implements AfterViewInit
         this.dataSourceId = '';
         this.downloading  = false;
         this.dataSources  = [];
+        this.dataSources.push({ 'name': 'Research Subjects', 'value': '0009' });
+        this.dataSources.push({ 'name': 'GP Practice Info (MIG)', 'value': '0010' });
         this.dataSources.push({ 'name': 'Arrests', 'value': '0000' });
         this.dataSources.push({ 'name': 'Attendance', 'value': '0001' });
         this.dataSources.push({ 'name': 'Domestic Abuse', 'value': '0002' });
@@ -44,7 +46,6 @@ export class AppComponent implements AfterViewInit
         this.dataSources.push({ 'name': 'DoWP No Match', 'value': '0006' });
         this.dataSources.push({ 'name': 'Pupil', 'value': '0007' });
         this.dataSources.push({ 'name': 'School Term', 'value': '0008' });
-        this.dataSources.push({ 'name': 'Research Subjects', 'value': '0009' });
     }
 
     public ngAfterViewInit(): void
@@ -160,7 +161,7 @@ export class AppComponent implements AfterViewInit
         {
             alternatingRowStyle: true,
             page:                'enable',
-            pageSize:            6,
+            pageSize:            18,
             width:               '100%',
             height:              '100%'
         };
